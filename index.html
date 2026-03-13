@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Advait Shiv Tantra · Himalayan Consciousness Foundation</title>
+  <!-- Primary meta & fonts -->
+  <meta name="description" content="You are not a body. You are eternal, immortal, blissful. Discover the ancient path of Advait Shiv Tantra under Dr. Neeraj Gupta.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ----- COLOR VARIABLES ----- */
+    :root {
+      --saffron-gold: #C9A84C;
+      --deep-crimson: #5C1A1A;
+      --smoke-white: #FAF6F0;
+      --forest-teal: #2F4F4F;
+      --soft-overlay: rgba(44, 34, 30, 0.3);
+      --shadow-sm: 0 8px 20px rgba(44, 34, 30, 0.08);
+    }
+
+    /* ----- RESET & BASE ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--smoke-white);
+      color: var(--forest-teal);
+      font-family: 'EB Garamond', serif;
+      line-height: 1.8;
+      font-size: 1.125rem;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      color: var(--deep-crimson);
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+    }
+
+    h1 { font-size: clamp(2.8rem, 10vw, 5rem); }
+    h2 { font-size: clamp(2.2rem, 6vw, 3.5rem); margin-bottom: 1.5rem; }
+    h3 { font-size: 2rem; }
+    h4 { font-size: 1.5rem; font-weight: 500; }
+
+    .ui-text {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    a, button {
+      transition: all 0.2s ease;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    /* ----- BUTTONS & UI ELEMENTS ----- */
+    .btn-primary {
+      background-color: var(--saffron-gold);
+      color: #1e2b2b;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      padding: 0.9rem 2.2rem;
+      border: none;
+      border-radius: 0px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border: 1px solid transparent;
+    }
+    .btn-primary:hover {
+      background-color: #b89238;
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(201,168,76,0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--saffron-gold);
+      color: var(--deep-crimson);
+      font-family: 'Jost', sans-serif;
+      padding: 0.7rem 1.8rem;
+      text-decoration: none;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    .btn-secondary:hover {
+      background: var(--saffron-gold);
+      color: #1e2b2b;
+    }
+
+    .cta-link {
+      font-family: 'Jost', sans-serif;
+      color: var(--deep-crimson);
+      text-decoration: none;
+      border-bottom: 1px solid var(--saffron-gold);
+      padding-bottom: 2px;
+      font-weight: 400;
+    }
+
+    /* ----- HEADER (menu removed) ----- */
+    .site-header {
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--smoke-white);
+      border-bottom: 1px solid rgba(47,79,79,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--deep-crimson);
+      line-height: 1;
+      letter-spacing: -0.5px;
+      text-align: center;
+    }
+    .logo span {
+      color: var(--saffron-gold);
+      font-size: 1rem;
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+    }
+
+    /* ----- HERO SECTION ----- */
+    .hero {
+      background: linear-gradient( var(--soft-overlay), var(--soft-overlay) ), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1950&auto=format&fit=crop') center/cover no-repeat;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: var(--smoke-white);
+    }
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .hero h1 {
+      color: var(--smoke-white);
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    .hero p {
+      font-size: 1.7rem;
+      font-family: 'Cormorant Garamond', serif;
+      margin: 1.5rem 0;
+    }
+    .trust-badge {
+      font-family: 'Jost', sans-serif;
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      word-spacing: 6px;
+      color: var(--smoke-white);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+
+    /* cards */
+    .teachings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .teaching-card {
+      background: white;
+      padding: 2rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(201,168,76,0.15);
+      text-align: center;
+    }
+    .teaching-card i {
+      font-size: 2.8rem;
+      color: var(--saffron-gold);
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .testimonial-card {
+      background: white;
+      padding: 2rem 1.8rem;
+      border-left: 6px solid var(--saffron-gold);
+      box-shadow: var(--shadow-sm);
+    }
+    /* image removed */
+
+    /* programs section (no prices) */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .program-card {
+      background: white;
+      padding: 2rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(201,168,76,0.2);
+      text-align: left;
+      transition: transform 0.2s;
+    }
+    .program-card:hover {
+      transform: translateY(-6px);
+    }
+    .program-card h4 {
+      color: var(--deep-crimson);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .program-card .badge {
+      background: var(--saffron-gold);
+      color: #1e2b2b;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.8rem;
+      padding: 0.3rem 1rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+    .program-card ul {
+      margin: 1rem 0 1.5rem;
+      padding-left: 1.2rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.95rem;
+    }
+    .program-card li {
+      margin-bottom: 0.4rem;
+    }
+    .program-card .btn-primary {
+      font-size: 1rem;
+      padding: 0.6rem 1.5rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* sanctuary CTA */
+    .sanctuary-cta {
+      background: linear-gradient( rgba(44, 34, 30, 0.5), rgba(44, 34, 30, 0.5) ), url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2071&auto=format&fit=crop') center/cover no-repeat fixed;
+      color: white;
+      text-align: center;
+    }
+    .sanctuary-cta h2 {
+      color: white;
+    }
+
+    /* contact address strip */
+    .contact-strip {
+      background: var(--forest-teal);
+      color: var(--smoke-white);
+      padding: 2rem;
+      text-align: center;
+      font-family: 'Jost', sans-serif;
+    }
+    .contact-strip a {
+      color: var(--saffron-gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-strip i {
+      margin-right: 0.5rem;
+      color: var(--saffron-gold);
+    }
+
+    /* footer */
+    .footer {
+      background: #1f3a3a;
+      color: #ddd;
+      padding: 3rem 2rem 1.5rem;
+      font-family: 'Jost', sans-serif;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .footer .logo {
+      color: var(--smoke-white);
+    }
+    .footer a {
+      color: var(--saffron-gold);
+      text-decoration: none;
+    }
+    .footer input {
+      padding: 0.6rem;
+      width: 70%;
+      background: #2f4f4f;
+      border: none;
+      color: white;
+    }
+    .sanskrit-mantra {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--saffron-gold);
+      border-top: 1px solid #3f5e5e;
+      padding-top: 1.5rem;
+    }
+
+    /* sticky mobile bar */
+    .sticky-mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--saffron-gold);
+      padding: 0.8rem 1rem;
+      text-align: center;
+      z-index: 100;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+    }
+    .sticky-mobile-bar .btn-primary {
+      background: var(--deep-crimson);
+      color: var(--smoke-white);
+      box-shadow: none;
+      padding: 0.7rem 1.8rem;
+      font-size: 1.1rem;
+      border: none;
+      width: auto;
+    }
+    @media (max-width: 640px) {
+      .sticky-mobile-bar {
+        display: block;
+      }
+      body {
+        padding-bottom: 80px;
+      }
+    }
+
+    /* MODAL POPUP */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      font-family: 'Jost', sans-serif;
+    }
+    .modal-card {
+      background: var(--smoke-white);
+      max-width: 450px;
+      width: 90%;
+      padding: 2rem;
+      box-shadow: 0 30px 40px rgba(0,0,0,0.3);
+      border-top: 8px solid var(--saffron-gold);
+      position: relative;
+    }
+    .modal-card h3 {
+      color: var(--deep-crimson);
+      margin-bottom: 1rem;
+    }
+    .modal-card input {
+      width: 100%;
+      padding: 1rem;
+      margin: 0.8rem 0;
+      border: 1px solid #ccc;
+      background: white;
+      font-size: 1rem;
+    }
+    .modal-card .btn-primary {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .close-modal {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--forest-teal);
+    }
+    .close-modal:hover { color: var(--deep-crimson); }
+
+    /* misc */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+      z-index: 101;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      background-color: #20b859;
+      transform: scale(1.05);
+    }
+    @media (max-width: 640px) {
+      .whatsapp-float {
+        bottom: 100px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.8rem;
+      }
+    }
+    .text-center { text-align: center; }
+  </style>
+</head>
+<body>
+
+<!-- MODAL POPUP (name & whatsapp) with hidden context -->
+<div id="waModal" class="modal-overlay">
+  <div class="modal-card">
+    <span class="close-modal" id="closeModalBtn">&times;</span>
+    <h3>Begin your journey</h3>
+    <p>Please share your name and WhatsApp number to proceed.</p>
+    <input type="hidden" id="modalContext" value="general inquiry">
+    <input type="text" id="modalName" placeholder="Your name" autocomplete="off">
+    <input type="tel" id="modalWhatsapp" placeholder="WhatsApp number (e.g. 919419168378)" autocomplete="off">
+    <button class="btn-primary" id="modalSubmitBtn">Send & continue</button>
+    <p style="font-size:0.9rem; margin-top:1rem;">We’ll open WhatsApp with your details.</p>
+  </div>
+</div>
+
+<!-- STICKY MOBILE BAR (trigger) -->
+<div class="sticky-mobile-bar">
+  <button class="btn-primary cta-wa-trigger" data-context="begin journey (sticky)">Begin Your Journey</button>
+</div>
+
+<!-- WHATSAPP FLOAT (direct link) -->
+<a href="https://wa.me/919419168378" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- HEADER (no menu) -->
+<header class="site-header">
+  <div class="logo">
+    ADVAIT SHIV TANTRA
+    <span>Himalayan Consciousness Foundation</span>
+  </div>
+</header>
+
+<!-- HERO (section 1) -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>You Are Not a Body.<br>You Are Eternal, Immortal, Blissful.</h1>
+    <p>Discover the ancient path of Advait Shiv Tantra — as taught in the living tradition of the Himalayan masters</p>
+    <button class="btn-primary cta-wa-trigger" data-context="begin journey (hero)">Begin Your Journey</button><br>
+    <a href="#" class="cta-link" style="color: var(--smoke-white); margin-left: 1rem;">Watch a Free Teaching</a>
+    <div class="trust-badge">50 Years of Research · Kashmir · Advaita · Tibetan Buddhism</div>
+  </div>
+</section>
+
+<!-- PROBLEM (empathy) -->
+<section class="container">
+  <h2 class="text-center">Are you tired of suffering that no doctor or therapy can truly end?</h2>
+  <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+    <p style="font-size: 1.4rem;">Stress, disease, restlessness, searching — the saints declared: the root of all suffering is identification with the body and mind.</p>
+    <p style="margin-top: 1.5rem;">The ancient solution: not medicine, not psychology — <strong>Self‑Realization</strong>.</p>
+  </div>
+</section>
+
+<!-- SOLUTION (transformation promise) -->
+<section class="container section-alt">
+  <h2 class="text-center">What if there were a permanent cure — not for symptoms, but for suffering itself?</h2>
+  <div class="teachings-grid" style="grid-template-columns: repeat(3,1fr); margin-top: 2rem; text-align: center;">
+    <div class="teaching-card" style="box-shadow: none; background: transparent;"><i class="fas fa-peace"></i><h4>Permanent Peace</h4></div>
+    <div class="teaching-card" style="box-shadow: none; background: transparent;"><i class="fas fa-infinity"></i><h4>Eternal Bliss</h4></div>
+    <div class="teaching-card" style="box-shadow: none; background: transparent;"><i class="fas fa-leaf"></i><h4>Freedom from Disease</h4></div>
+  </div>
+</section>
+
+<!-- ABOUT DR. NEERAJ GUPTA (image removed) -->
+<section class="container" style="padding-top: 1rem;">
+  <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+    <h2>Dr. Neeraj Gupta — senior teacher of Advait Shiv Tantra</h2>
+    <p style="font-size: 1.3rem; margin: 1.5rem 0;">A realized teacher in the Himalayan lineage, guiding seekers for over two decades.</p>
+    <p>Dr. Neeraj Gupta embodies the direct transmission of the Brahma Rishis. His compassionate, non-dogmatic approach helps students integrate ancient wisdom into modern life. He has personally guided hundreds on the path to Self‑Realization, and now carries the responsibility of sharing the complete teaching of Advait Shiv Tantra under the auspices of the Himalayan Consciousness Foundation.</p>
+    <a href="#" class="cta-link">Read His Full Story →</a>
+  </div>
+</section>
+
+<!-- FEATURED TEACHINGS (6 streams) -->
+<section class="container">
+  <h2 class="text-center">Six Research Streams — One Source</h2>
+  <div class="teachings-grid">
+    <div class="teaching-card"><i class="fas fa-seedling"></i><h4>Healing, Meditation & Kundalini Awakening</h4><p>Awaken the dormant force.</p><a href="#" class="cta-link">Learn More</a></div>
+    <div class="teaching-card"><i class="fas fa-heart"></i><h4>Counselling, Happiness, Joy & Divine Love</h4><p>Emotional liberation.</p><a href="#" class="cta-link">Learn More</a></div>
+    <div class="teaching-card"><i class="fas fa-mountain"></i><h4>Shiva Dhyan & Mata Vaishno Devi Dhyan</h4><p>Ancient meditations.</p><a href="#" class="cta-link">Learn More</a></div>
+    <div class="teaching-card"><i class="fas fa-star"></i><h4>Advait Shiv Tantra, Astral Travel & Yogic Bliss</h4><p>Beyond the body.</p><a href="#" class="cta-link">Learn More</a></div>
+    <div class="teaching-card"><i class="fas fa-sun"></i><h4>Enlightenment, Ecstasy & Celebration</h4><p>Oneness as reality.</p><a href="#" class="cta-link">Learn More</a></div>
+    <div class="teaching-card"><i class="fas fa-book"></i><h4>Book Writing — Sharing the Fragrance</h4><p>Transcribe awakening.</p><a href="#" class="cta-link">Learn More</a></div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION STORIES (images removed) -->
+<section class="container">
+  <h2 class="text-center">From suffering to wholeness — real stories</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <h4>From chronic illness to wholeness</h4>
+      <p>"After decades of pain, the teaching dissolved what medicine couldn't." – Mira, Canada</p>
+    </div>
+    <div class="testimonial-card">
+      <h4>From anxiety to eternal peace</h4>
+      <p>"Dr. Neeraj's presence is the transmission." – Arjun, Mumbai</p>
+    </div>
+    <div class="testimonial-card">
+      <h4>The frozen spirit melted</h4>
+      <p>"I experienced the chakras as ice turning to vapour." – Elena, UK</p>
+    </div>
+  </div>
+</section>
+
+<!-- OUR PROGRAMS SECTION (prices removed) -->
+<section class="container" style="background: #fffffffa; border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.2);">
+  <h2 class="text-center">Our Programs — paths to awakening</h2>
+  <div class="programs-grid">
+    <!-- Online Courses -->
+    <div class="program-card">
+      <div class="badge">ONLINE · SELF-PACED</div>
+      <h4>Yoga Without Body</h4>
+      <ul>
+        <li>12 transformational sessions</li>
+        <li>Direct transmission via videos</li>
+        <li>Lifetime access</li>
+      </ul>
+      <!-- price removed -->
+      <button class="btn-primary cta-wa-trigger" data-context="enroll in Yoga Without Body">Enroll in this teaching</button>
+    </div>
+    <!-- Live Satsangs -->
+    <div class="program-card">
+      <div class="badge">LIVE · WEEKLY</div>
+      <h4>Shiva Dhyan Satsang</h4>
+      <ul>
+        <li>Live guided meditation (Zoom)</li>
+        <li>Q&A with Dr. Neeraj Gupta</li>
+        <li>Recordings included</li>
+      </ul>
+      <!-- price removed -->
+      <button class="btn-primary cta-wa-trigger" data-context="join Shiva Dhyan Satsang">Join Satsang</button>
+    </div>
+    <!-- Private Guidance -->
+    <div class="program-card">
+      <div class="badge">1-on-1 · PRIVATE</div>
+      <h4>Personal Mentorship</h4>
+      <ul>
+        <li>Individual sessions with teacher</li>
+        <li>Tailored sadhana</li>
+        <li>6 sessions / 3 months</li>
+      </ul>
+      <!-- price removed -->
+      <button class="btn-primary cta-wa-trigger" data-context="apply for Personal Mentorship">Apply for mentorship</button>
+    </div>
+    <!-- Himalayan Retreat -->
+    <div class="program-card">
+      <div class="badge">IN-PERSON · JAMMU</div>
+      <h4>Himalayan Intensives</h4>
+      <ul>
+        <li>7-day silent retreat</li>
+        <li>At the Foundation ashram</li>
+        <li>All meals included</li>
+      </ul>
+      <p><strong>Next batch:</strong> 15–22 May</p> <!-- kept as info, not price -->
+      <button class="btn-primary cta-wa-trigger" data-context="register for Himalayan Intensive">Register interest</button>
+    </div>
+  </div>
+  <p class="text-center" style="margin-top: 2.5rem; font-family: 'Jost';">All programs carry the living transmission of the Himalayan lineage. <br><em>Free support available for sincere seekers — ask when you apply.</em></p>
+</section>
+
+<!-- SANCTUARY CTA with Apply for Residency (modal context) -->
+<section class="sanctuary-cta" style="padding: 6rem 1rem;">
+  <div class="container">
+    <h2 style="font-size: 3.5rem;">Come Home. The Sanctuary Awaits.</h2>
+    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+      <button class="btn-primary cta-wa-trigger" data-context="apply for residency">Apply for Residency</button>
+      <a href="#" class="btn-secondary" style="background: transparent; color: white; border-color: white;">Explore Online Programs</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT ADDRESS & MAP LINK -->
+<div class="contact-strip">
+  <i class="fas fa-map-marker-alt"></i> 
+  <strong>Himalayan Consciousness Foundation</strong> — 200 A/D, First Floor, Left Lane of Panch Mandir, Gandhi Nagar, Jammu, Jammu and Kashmir 180004 <br>
+  <a href="https://maps.app.goo.gl/qArUrBCpAtmTqQv57" target="_blank" style="margin-left: 1rem;"><i class="fas fa-external-link-alt"></i> View on Google Maps</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="logo" style="color: var(--smoke-white);">ADVAIT SHIV TANTRA</div>
+      <p style="margin: 1rem 0;">Under the guidance of Dr. Neeraj Gupta & Himalayan masters</p>
+      <div style="font-size: 1.5rem; letter-spacing: 1rem;">
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4 style="color: var(--saffron-gold);">Contact</h4>
+      <p>Jammu Ashram<br>200 A/D, Gandhi Nagar<br>Jammu, J&K 180004</p>
+    </div>
+    <div>
+      <h4 style="color: var(--saffron-gold);">Newsletter</h4>
+      <p>Receive satsangs & teachings</p>
+      <input type="email" placeholder="Email"><br>
+      <button class="btn-primary" style="margin-top: 1rem; padding: 0.5rem 1.5rem;">Subscribe</button>
+    </div>
+  </div>
+  <div class="sanskrit-mantra">Tat Tvam Asi</div>
+  <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem;">© Himalayan Consciousness Foundation — A journey from Self to Infinity</p>
+</footer>
+
+<!-- JavaScript for modal with context -->
+<script>
+  (function() {
+    const WA_NUMBER = '919419168378';
+    const modalOverlay = document.getElementById('waModal');
+    const modalName = document.getElementById('modalName');
+    const modalWhatsapp = document.getElementById('modalWhatsapp');
+    const modalSubmit = document.getElementById('modalSubmitBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const modalContext = document.getElementById('modalContext');
+
+    function openModal(context = 'general inquiry') {
+      modalContext.value = context;
+      modalOverlay.style.display = 'flex';
+      modalName.value = '';
+      modalWhatsapp.value = '';
+    }
+
+    function closeModal() {
+      modalOverlay.style.display = 'none';
+    }
+
+    document.querySelectorAll('.cta-wa-trigger').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const context = btn.getAttribute('data-context') || 'inquiry';
+        openModal(context);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+
+    modalSubmit.addEventListener('click', function() {
+      const name = modalName.value.trim();
+      const wa = modalWhatsapp.value.trim();
+      const context = modalContext.value;
+
+      if (!name || !wa) {
+        alert('Please enter both name and WhatsApp number.');
+        return;
+      }
+
+      const waClean = wa.replace(/\s+/g, '');
+      if (!/^\+?\d{7,15}$/.test(waClean)) {
+        alert('Please enter a valid WhatsApp number (7-15 digits, optional +).');
+        return;
+      }
+
+      const message = `Namaste, I am interested in: ${encodeURIComponent(context)}.%0A%0AName: ${encodeURIComponent(name)}%0AWhatsApp: ${encodeURIComponent(waClean)}`;
+      const url = `https://wa.me/${WA_NUMBER}?text=${message}`;
+      window.open(url, '_blank');
+      closeModal();
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalOverlay.style.display === 'flex') {
+        closeModal();
+      }
+    });
+  })();
+</script>
+</body>
+</html>
