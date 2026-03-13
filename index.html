@@ -21,6 +21,7 @@
       --forest-teal: #2F4F4F;
       --soft-overlay: rgba(44, 34, 30, 0.3);
       --shadow-sm: 0 8px 20px rgba(44, 34, 30, 0.08);
+      --shadow-hover: 0 20px 30px rgba(44, 34, 30, 0.15);
     }
 
     /* ----- RESET & BASE ----- */
@@ -59,7 +60,8 @@
     }
 
     a, button {
-      transition: all 0.2s ease;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      cursor: pointer;
     }
 
     .container {
@@ -70,6 +72,63 @@
 
     section {
       padding: 5rem 0;
+      will-change: transform, opacity;
+    }
+
+    /* ----- ANIMATIONS ----- */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes gentlePulse {
+      0% { transform: scale(1); box-shadow: 0 10px 20px rgba(0,0,0,0.25); }
+      50% { transform: scale(1.05); box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
+      100% { transform: scale(1); box-shadow: 0 10px 20px rgba(0,0,0,0.25); }
+    }
+
+    /* Base hidden state for scroll animation */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero is visible by default */
+    .hero .hero-content {
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    /* Card hover effects */
+    .teaching-card, .program-card, .testimonial-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .teaching-card:hover, .program-card:hover, .testimonial-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn-primary, .btn-secondary {
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(201,168,76,0.3);
+    }
+    .btn-secondary:hover {
+      background-color: var(--saffron-gold);
+      color: #1e2b2b;
+      transform: translateY(-3px);
+    }
+
+    /* WhatsApp float gentle pulse */
+    .whatsapp-float {
+      animation: gentlePulse 3s infinite ease-in-out;
     }
 
     /* ----- BUTTONS & UI ELEMENTS ----- */
@@ -82,19 +141,12 @@
       border: none;
       border-radius: 0px;
       font-size: 1.2rem;
-      cursor: pointer;
       display: inline-block;
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       border: 1px solid transparent;
-    }
-    .btn-primary:hover {
-      background-color: #b89238;
-      color: #000;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(201,168,76,0.3);
     }
 
     .btn-secondary {
@@ -106,10 +158,6 @@
       text-decoration: none;
       font-weight: 400;
       letter-spacing: 1px;
-    }
-    .btn-secondary:hover {
-      background: var(--saffron-gold);
-      color: #1e2b2b;
     }
 
     .cta-link {
@@ -228,15 +276,6 @@
       box-shadow: var(--shadow-sm);
       border: 1px solid rgba(201,168,76,0.2);
       text-align: left;
-      transition: transform 0.2s;
-    }
-    .program-card:hover {
-      transform: translateY(-6px);
-    }
-    .program-card h4 {
-      color: var(--deep-crimson);
-      margin-bottom: 0.5rem;
-      font-weight: 600;
     }
     .program-card .badge {
       background: var(--saffron-gold);
@@ -285,6 +324,11 @@
       border-radius: 4px;
       box-shadow: var(--shadow-sm);
       border: 2px solid var(--saffron-gold);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .shiva-image img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     }
     .shiva-text {
       flex: 2 1 400px;
@@ -311,7 +355,7 @@
       color: white;
     }
 
-    /* GOOGLE MAPS SECTION (new) */
+    /* GOOGLE MAPS SECTION */
     .map-section {
       background: var(--forest-teal);
       color: var(--smoke-white);
@@ -327,6 +371,11 @@
       margin: 0 auto;
       border: 4px solid var(--saffron-gold);
       box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .map-container:hover {
+      transform: scale(1.01);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.3);
     }
     .map-container iframe {
       width: 100%;
@@ -344,7 +393,7 @@
       font-weight: 500;
     }
 
-    /* contact address strip (simplified, kept for redundancy but map now above) */
+    /* contact address strip */
     .contact-strip {
       background: var(--forest-teal);
       color: var(--smoke-white);
@@ -451,6 +500,7 @@
       box-shadow: 0 30px 40px rgba(0,0,0,0.3);
       border-top: 8px solid var(--saffron-gold);
       position: relative;
+      animation: fadeInUp 0.4s ease;
     }
     .modal-card h3 {
       color: var(--deep-crimson);
@@ -494,10 +544,6 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.25);
       z-index: 101;
       text-decoration: none;
-    }
-    .whatsapp-float:hover {
-      background-color: #20b859;
-      transform: scale(1.05);
     }
     @media (max-width: 640px) {
       .whatsapp-float {
@@ -550,13 +596,12 @@
     <h1>You Are Not a Body.<br>You Are Eternal, Immortal, Blissful.</h1>
     <p>Discover the ancient path of Advait Shiv Tantra — as taught in the living tradition of the Himalayan masters</p>
     <button class="btn-primary cta-wa-trigger" data-context="begin journey (hero)">Begin Your Journey</button>
-    <!-- "Watch a Free Teaching" link removed as requested -->
     <div class="trust-badge">50 Years of Research · Kashmir · Advaita · Tibetan Buddhism</div>
   </div>
 </section>
 
 <!-- PROBLEM (empathy) -->
-<section class="container">
+<section class="container animate-on-scroll" id="problem-section">
   <h2 class="text-center">Are you tired of suffering that no doctor or therapy can truly end?</h2>
   <div style="max-width: 800px; margin: 0 auto; text-align: center;">
     <p style="font-size: 1.4rem;">Stress, disease, restlessness, searching — the saints declared: the root of all suffering is identification with the body and mind.</p>
@@ -565,7 +610,7 @@
 </section>
 
 <!-- SOLUTION (transformation promise) -->
-<section class="container section-alt">
+<section class="container section-alt animate-on-scroll" id="solution-section">
   <h2 class="text-center">What if there were a permanent cure — not for symptoms, but for suffering itself?</h2>
   <div class="teachings-grid" style="grid-template-columns: repeat(3,1fr); margin-top: 2rem; text-align: center;">
     <div class="teaching-card" style="box-shadow: none; background: transparent;"><i class="fas fa-peace"></i><h4>Permanent Peace</h4></div>
@@ -575,7 +620,7 @@
 </section>
 
 <!-- ABOUT DR. NEERAJ GUPTA (image removed) -->
-<section class="container" style="padding-top: 1rem;">
+<section class="container animate-on-scroll" id="about-section" style="padding-top: 1rem;">
   <div style="max-width: 900px; margin: 0 auto; text-align: center;">
     <h2>Dr. Neeraj Gupta — senior teacher of Advait Shiv Tantra</h2>
     <p style="font-size: 1.3rem; margin: 1.5rem 0;">A realized teacher in the Himalayan lineage, guiding seekers for over two decades.</p>
@@ -585,7 +630,7 @@
 </section>
 
 <!-- SHIV PIC SECTION -->
-<section class="shiva-section">
+<section class="shiva-section animate-on-scroll" id="shiva-section">
   <div class="container shiva-grid">
     <div class="shiva-image">
       <!-- Sacred image of Lord Shiva (Adiyogi) -->
@@ -601,7 +646,7 @@
 </section>
 
 <!-- FEATURED TEACHINGS (6 streams) -->
-<section class="container">
+<section class="container animate-on-scroll" id="teachings-section">
   <h2 class="text-center">Six Research Streams — One Source</h2>
   <div class="teachings-grid">
     <div class="teaching-card"><i class="fas fa-seedling"></i><h4>Healing, Meditation & Kundalini Awakening</h4><p>Awaken the dormant force.</p><a href="#" class="cta-link">Learn More</a></div>
@@ -614,7 +659,7 @@
 </section>
 
 <!-- TRANSFORMATION STORIES (images removed) -->
-<section class="container">
+<section class="container animate-on-scroll" id="testimonials-section">
   <h2 class="text-center">From suffering to wholeness — real stories</h2>
   <div class="testimonial-grid">
     <div class="testimonial-card">
@@ -633,7 +678,7 @@
 </section>
 
 <!-- OUR PROGRAMS SECTION (prices removed) -->
-<section class="container" style="background: #fffffffa; border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.2);">
+<section class="container animate-on-scroll" id="programs-section" style="background: #fffffffa; border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.2);">
   <h2 class="text-center">Our Programs — paths to awakening</h2>
   <div class="programs-grid">
     <!-- Online Courses -->
@@ -682,11 +727,11 @@
       <button class="btn-primary cta-wa-trigger" data-context="register for Himalayan Intensive">Register interest</button>
     </div>
   </div>
-  <p class="text-center" style="margin-top: 2.5rem; font-family: 'Jost';">All programs carry the living transmission of the Himalayan lineage. <br><em>Free support available for sincere seekers — ask when you apply.</em></p>
+  <p class="text-center" style="margin-top: 2.5rem; font-family: 'JST';">All programs carry the living transmission of the Himalayan lineage. <br><em>Free support available for sincere seekers — ask when you apply.</em></p>
 </section>
 
 <!-- SANCTUARY CTA with Apply for Residency (modal context) -->
-<section class="sanctuary-cta" style="padding: 6rem 1rem;">
+<section class="sanctuary-cta animate-on-scroll" id="sanctuary-section" style="padding: 6rem 1rem;">
   <div class="container">
     <h2 style="font-size: 3.5rem;">Come Home. The Sanctuary Awaits.</h2>
     <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
@@ -696,12 +741,11 @@
   </div>
 </section>
 
-<!-- GOOGLE MAPS SECTION (new, embedded) -->
-<section class="map-section">
+<!-- GOOGLE MAPS SECTION (embedded) -->
+<section class="map-section animate-on-scroll" id="map-section">
   <div class="container">
     <h2>Visit Our Ashram in Jammu</h2>
     <div class="map-container">
-      <!-- Embedded Google Map showing the exact address (using q parameter) -->
       <iframe src="https://www.google.com/maps?q=200%20A%2FD%2C%20First%20Floor%2C%20Left%20Lane%20of%20Panch%20Mandir%2C%20Gandhi%20Nagar%2C%20Jammu%2C%20Jammu%20and%20Kashmir%20180004&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <div class="map-address">
@@ -712,7 +756,7 @@
   </div>
 </section>
 
-<!-- CONTACT ADDRESS STRIP (kept as additional text) -->
+<!-- CONTACT ADDRESS STRIP -->
 <div class="contact-strip">
   <i class="fas fa-map-marker-alt"></i> 
   <strong>Himalayan Consciousness Foundation</strong> — 200 A/D, First Floor, Left Lane of Panch Mandir, Gandhi Nagar, Jammu, Jammu and Kashmir 180004
@@ -745,9 +789,10 @@
   <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem;">© Himalayan Consciousness Foundation — A journey from Self to Infinity</p>
 </footer>
 
-<!-- JavaScript for modal with context -->
+<!-- JavaScript for modal and scroll animations -->
 <script>
   (function() {
+    // WhatsApp modal logic
     const WA_NUMBER = '919419168378';
     const modalOverlay = document.getElementById('waModal');
     const modalName = document.getElementById('modalName');
@@ -807,6 +852,20 @@
         closeModal();
       }
     });
+
+    // Scroll animation using Intersection Observer
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Optionally unobserve after first trigger
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
+
+    animatedElements.forEach(el => observer.observe(el));
   })();
 </script>
 </body>
